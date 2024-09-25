@@ -92,7 +92,7 @@ async def playlist_endpoint(
     return await get_playlist(request, playlist_params, proxy_headers)
 
 
-@proxy_router.get("/mpd/segment.ts")
+@proxy_router.get("/mpd/segment.m3u8")
 async def segment_endpoint(
     segment_params: Annotated[MPDSegmentParams, Query()],
     proxy_headers: Annotated[ProxyRequestHeaders, Depends(get_proxy_headers)],
